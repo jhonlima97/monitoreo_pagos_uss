@@ -1,0 +1,267 @@
+# ============================================================================
+#  monitoreo_pagos_uss  -  .gitignore
+#  Plataforma de monitoreo y conciliacion de pagos multi-banco (USS)
+#  Stack: ASP.NET WebForms / WCF / .NET Framework 4.8 / SQL Server
+# ============================================================================
+
+# ----------------------------------------------------------------------------
+# 1) SECRETOS, CREDENCIALES, CONEXIONES A BD  (NUNCA SUBIR)
+# ----------------------------------------------------------------------------
+# Configs por entorno (contienen IPs reales, usuarios y passwords de SQL Server)
+**/Web_local.config
+**/Web_produccion.config
+**/Web_prod.config
+**/Web_qa.config
+**/Web_dev.config
+**/Web_staging.config
+**/appsettings.*.json
+**/appsettings.Production.json
+**/appsettings.Development.json
+**/connectionStrings.config
+**/secrets.config
+
+# Archivos del proyecto que contienen el connection string real a SQL Server
+# (IP interna 10.x, usuario y password). Quedan locales, NO van al repo.
+USS.FactElectronica.DataAccess/App.config
+USS.FactElectronica.DataAccess/Properties/Settings.settings
+USS.FactElectronica.DataAccess/Properties/Settings.Designer.cs
+**/USS.ArcCentral.DataAccess.dll.config
+
+# Variables de entorno locales
+.env
+.env.*
+*.env
+
+# Llaves, certificados, tokens
+*.pfx
+*.snk
+*.key
+*.pem
+*.crt
+*.cer
+*.p12
+*.jks
+*.kdbx
+
+# Credenciales de servicios cloud
+**/credentials.json
+**/google-credentials.json
+**/aws-credentials*
+**/.aws/credentials
+**/.azure/credentials
+publishsettings.xml
+*.publishsettings
+**/PublishProfiles/*.pubxml.user
+
+# ----------------------------------------------------------------------------
+# 2) VISUAL STUDIO / IDE
+# ----------------------------------------------------------------------------
+.vs/
+.vscode/
+.idea/
+*.suo
+*.user
+*.userprefs
+*.userosscache
+*.sln.docstates
+*.sln.iml
+*.opensdf
+*.sdf
+*.cachefile
+*.VC.db
+*.VC.opendb
+.ntvs_analysis.dat
+.mfractor/
+.history/
+
+# ReSharper / Rider
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings.user
+
+# JetBrains (otros)
+.idea_modules/
+
+# ----------------------------------------------------------------------------
+# 3) BUILD / COMPILACION (.NET)
+# ----------------------------------------------------------------------------
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Ll]og/
+[Ll]ogs/
+
+# Build outputs
+*.dll
+*.exe
+*.pdb
+*.mdb
+*.cache
+*.tlb
+*.tlh
+*.tli
+*.tmp
+*.tmp_proj
+*_p.c
+*_h.h
+*_i.c
+*.ilk
+*.iobj
+*.ipdb
+*.meta
+*.obj
+*.iobj
+*.pch
+*.response
+*.sbr
+*.tlog
+*.vspscc
+*.vssscc
+.builds
+*.pidb
+*.svclog
+*.scc
+
+# NuGet packages
+packages/
+*.nupkg
+*.snupkg
+**/[Pp]ackages/*
+!**/[Pp]ackages/build/
+!**/[Pp]ackages/repositories.config
+*.nuget.props
+*.nuget.targets
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Output del WebApp (publish)
+[Pp]ublish/
+PublishScripts/
+**/Properties/PublishProfiles/*.pubxml
+**/Properties/PublishProfiles/*.pubxml.user
+
+# ----------------------------------------------------------------------------
+# 4) TESTS / COVERAGE
+# ----------------------------------------------------------------------------
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+*.coverage
+*.coveragexml
+*.trx
+*.VisualState.xml
+TestResult.xml
+nunit-*.xml
+coverage*.json
+coverage*.xml
+coverage*.info
+*.opencover.xml
+
+# ----------------------------------------------------------------------------
+# 5) BASES DE DATOS LOCALES / VOLCADOS
+# ----------------------------------------------------------------------------
+*.mdf
+*.ldf
+*.ndf
+*.bak
+*.bacpac
+*.dacpac
+*.sqlite
+*.sqlite3
+*.db
+*.db3
+*.sql.gz
+LocalDB/
+
+# ----------------------------------------------------------------------------
+# 6) ARCHIVOS SUBIDOS POR USUARIOS / DATOS DE NEGOCIO
+# ----------------------------------------------------------------------------
+# El sistema procesa archivos de conciliacion bancaria que pueden contener
+# datos personales (DNI, montos, cuentas). NO subir muestras reales.
+USS.ArcCentral.Presentacion/UploadFile/*
+!USS.ArcCentral.Presentacion/UploadFile/SubirArchivo.ashx
+!USS.ArcCentral.Presentacion/UploadFile/SubirArchivo.ashx.cs
+!USS.ArcCentral.Presentacion/UploadFile/.gitkeep
+
+USS.ArcCentral.Presentacion/Documentos/*
+!USS.ArcCentral.Presentacion/Documentos/.gitkeep
+
+# Reportes individuales generados (PDFs con datos de personas)
+USS.ArcCentral.Presentacion/ReporteIndividual/*
+!USS.ArcCentral.Presentacion/ReporteIndividual/.gitkeep
+
+# Cualquier extracto / reporte bancario en el repo
+*conciliacion*.xlsx
+*conciliacion*.xls
+*conciliacion*.csv
+*conciliacion*.txt
+extracto*.xlsx
+extracto*.xls
+extracto*.csv
+
+# ----------------------------------------------------------------------------
+# 7) ARCHIVOS DEL SISTEMA OPERATIVO
+# ----------------------------------------------------------------------------
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+*.stackdump
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+
+# ----------------------------------------------------------------------------
+# 8) LOGS / TEMPORALES / BACKUPS
+# ----------------------------------------------------------------------------
+*.log
+*.bak
+*.old
+*.orig
+*.swp
+*.swo
+*~
+*.tmp
+ScaffoldingReadMe.txt
+StyleCopReport.xml
+
+# ----------------------------------------------------------------------------
+# 9) HERRAMIENTAS / EXTENSIONES
+# ----------------------------------------------------------------------------
+# Node (por si se usa npm para tooling frontend)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Claude Code / asistentes
+.claude/
+CLAUDE.md
+CLAUDE.local.md
+
+# Misc
+*.swp
+.task

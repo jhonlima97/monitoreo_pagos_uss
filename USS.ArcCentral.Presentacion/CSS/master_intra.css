@@ -1,0 +1,247 @@
+﻿/** Powered by Jenner Castillo */
+/** Powered by Jenner Castillo */
+/*@font-face {
+  font-family: "Ciutadella Slab";
+  src: url("font/ciu/CiutadellaSlab-Bd.eot");
+  src: url("font/ciu/CiutadellaSlab-Bd.eot?#iefix") format("embedded-opentype"), url("font/ciu/CiutadellaSlab-Bd.woff") format("woff"), url("font/ciu/CiutadellaSlab-Bd.ttf") format("truetype"), url("font/ciu/CiutadellaSlab-Bd.svg#CiutadellaSlab-Bd") format("svg");
+  font-weight: bold;
+  font-style: normal; }
+@font-face {
+  font-family: "Ciutadella Slab";
+  src: url("font/ciu/CiutadellaSlab-Lt.eot");
+  src: url("font/ciu/CiutadellaSlab-Lt.eot?#iefix") format("embedded-opentype"), url("font/ciu/CiutadellaSlab-Lt.woff") format("woff"), url("font/ciu/CiutadellaSlab-Lt.ttf") format("truetype"), url("font/ciu/CiutadellaSlab-Lt.svg#CiutadellaSlab-Lt") format("svg");
+  font-weight: 300;
+  font-style: normal; }
+@font-face {
+  font-family: "Ciutadella Slab";
+  src: url("font/ciu/CiutadellaSlab-Rg.eot");
+  src: url("font/ciu/CiutadellaSlab-Rg.eot?#iefix") format("embedded-opentype"), url("font/ciu/CiutadellaSlab-Rg.woff") format("woff"), url("font/ciu/CiutadellaSlab-Rg.ttf") format("truetype"), url("font/ciu/CiutadellaSlab-Rg.svg#CiutadellaSlab-Rg") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: "Ciutadella Slab";
+  src: url("font/ciu/CiutadellaSlab-Md.eot");
+  src: url("font/ciu/CiutadellaSlab-Md.eot?#iefix") format("embedded-opentype"), url("font/ciu/CiutadellaSlab-Md.woff") format("woff"), url("font/ciu/CiutadellaSlab-Md.ttf") format("truetype"), url("font/ciu/CiutadellaSlab-Md.svg#CiutadellaSlab-Md") format("svg");
+  font-weight: 500;
+  font-style: normal; }
+@font-face {
+  font-family: "Ciutadella Slab";
+  src: url("font/ciu/CiutadellaSlab-SmBd.eot");
+  src: url("font/ciu/CiutadellaSlab-SmBd.eot?#iefix") format("embedded-opentype"), url("font/ciu/CiutadellaSlab-SmBd.woff") format("woff"), url("font/ciu/CiutadellaSlab-SmBd.ttf") format("truetype"), url("font/ciu/CiutadellaSlab-SmBd.svg#CiutadellaSlab-SmBd") format("svg");
+  font-weight: 600;
+  font-style: normal; }
+@font-face {
+  font-family: "Ciutadella Slab";
+  src: url("font/ciu/CiutadellaSlab-LtIt.eot");
+  src: url("font/ciu/CiutadellaSlab-LtIt.eot?#iefix") format("embedded-opentype"), url("font/ciu/CiutadellaSlab-LtIt.woff") format("woff"), url("font/ciu/CiutadellaSlab-LtIt.ttf") format("truetype"), url("font/ciu/CiutadellaSlab-LtIt.svg#CiutadellaSlab-LtIt") format("svg");
+  font-weight: 300;
+  font-style: italic; }*/
+/*@font-face {
+  font-family: "Brix Sans";
+  src: url("font/brix/BrixSansExtraLight.eot");
+  src: url("font/brix/BrixSansExtraLight.eot?#iefix") format("embedded-opentype"), url("font/brix/BrixSansExtraLight.woff") format("woff"), url("font/brix/BrixSansExtraLight.ttf") format("truetype"), url("font/brix/BrixSansExtraLight.svg#BrixSansExtraLight") format("svg");
+  font-weight: 200;
+  font-style: normal; }*/
+/*@font-face {
+  font-family: "Brix Sans";
+  src: url("font/brix/BrixSansMedium.eot");
+  src: url("font/brix/BrixSansMedium.eot?#iefix") format("embedded-opentype"), url("font/brix/BrixSansMedium.woff") format("woff"), url("font/brix/BrixSansMedium.ttf") format("truetype"), url("font/brix/BrixSansMedium.svg#BrixSansMedium") format("svg");
+  font-weight: 500;
+  font-style: normal; }*/
+/*@font-face {
+  font-family: "Brix Sans";
+  src: url("font/brix/BrixSansLight.eot");
+  src: url("font/brix/BrixSansLight.eot?#iefix") format("embedded-opentype"), url("font/brix/BrixSansLight.woff") format("woff"), url("font/brix/BrixSansLight.ttf") format("truetype"), url("font/brix/BrixSansLight.svg#BrixSansLight") format("svg");
+  font-weight: 300;
+  font-style: normal; }*/
+/*@font-face {
+  font-family: "Brix Sans";
+  src: url("font/brix/BrixSansRegular.eot");
+  src: url("font/brix/BrixSansRegular.eot?#iefix") format("embedded-opentype"), url("font/brix/BrixSansRegular.woff") format("woff"), url("font/brix/BrixSansRegular.ttf") format("truetype"), url("font/brix/BrixSansRegular.svg#BrixSansRegular") format("svg");
+  font-weight: normal;
+  font-style: normal; }*/
+/*@font-face {
+  font-family: "Brix Sans";
+  src: url("font/brix/BrixSansBold.eot");
+  src: url("font/brix/BrixSansBold.eot?#iefix") format("embedded-opentype"), url("font/brix/BrixSansBold.woff") format("woff"), url("font/brix/BrixSansBold.ttf") format("truetype"), url("font/brix/BrixSansBold.svg#BrixSansBold") format("svg");
+  font-weight: bold;
+  font-style: normal; }*/
+.form-control {
+  display: block;
+  width: 100%;
+  padding: 0.8rem 1.1rem;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 0px solid #ced4da;
+  border-radius: 0rem;
+  font-weight: 300;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; }
+  .form-control::-ms-expand {
+    background-color: transparent;
+    border: 0; }
+  .form-control:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: #444444;
+    outline: 0;
+    box-shadow: 0 0 0 0rem rgba(0, 123, 255, 0.25); }
+  .form-control::-webkit-input-placeholder {
+    color: #b3b3b3;
+    opacity: 1; }
+  .form-control::-moz-placeholder {
+    color: #b3b3b3;
+    opacity: 1; }
+  .form-control:-ms-input-placeholder {
+    color: #b3b3b3;
+    opacity: 1; }
+  .form-control::-ms-input-placeholder {
+    color: #b3b3b3;
+    opacity: 1; }
+  .form-control::placeholder {
+    color: #b3b3b3;
+    opacity: 1; }
+  .form-control:disabled, .form-control .form-control[readonly] {
+    background-color: #e9ecef;
+    opacity: 1; }
+
+.form-check-input:disabled ~ .form-check-label {
+  color: #fff; }
+
+.form-check-label {
+  margin-bottom: 0;
+  color: #fff;
+  font-size: 0.8rem; }
+
+.__bor {
+  display: block;
+  width: 100%;
+  padding: 0.8rem 1.1rem;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ededed;
+  border-radius: 0rem;
+  font-weight: 300;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; }
+  .__bor:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: #97d700; }
+
+.btn-secondary {
+  background-color: #97d700;
+  border-color: #97d700;
+  display: inline-block;
+  font-size: 0.9em;
+  color: #444444;
+  border: 0px solid;
+  padding: 0.6em 1em;
+  border-radius: 0px;
+  font-weight: 400;
+  text-align: left;
+  letter-spacing: 2px;
+  font-family: "Ciutadella Slab", sans-serif; }
+  .btn-secondary:hover {
+    color: #97d700;
+    border-color: #333;
+    background-color: #333; }
+  .btn-secondary:active {
+    color: #97d700;
+    border-color: #333;
+    background-color: #333; }
+  .btn-secondary:focus {
+    color: #97d700;
+    border-color: #333;
+    background-color: #333; }
+
+.btn-secondary:focus, .btn-secondary.focus {
+  box-shadow: 0 0 0 0rem rgba(0, 123, 255, 0.5); }
+
+.btn-secondary.disabled, .btn-secondary:disabled {
+  color: #fff;
+  background-color: #97d700;
+  border-color: #97d700; }
+
+.btn-secondary:not(:disabled):not(.disabled):active, .btn-secondary:not(:disabled):not(.disabled).active, .show > .btn-secondary.dropdown-toggle {
+  color: #fff;
+  background-color: #97d700;
+  border-color: #97d700; }
+
+.btn-secondary:not(:disabled):not(.disabled):active:focus, .btn-secondary:not(:disabled):not(.disabled).active:focus, .show > .btn-secondary.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0rem rgba(0, 123, 255, 0.5); }
+
+body {
+  height: 100%;
+  background-color: #fff;
+  transition: all 0.3s ease 0s;
+  font-family: "Brix Sans", sans-serif;
+  letter-spacing: 0.25px;
+  color: #444444;
+  font-weight: 300; }
+
+a {
+  color: #444444;
+  transition: all 0.3s ease 0s; }
+  a:hover {
+    color: #97d700;
+    text-decoration: none; }
+
+.__bg_verde {
+    background: url("../img/fondouss.jpg");
+    background-position: top;
+    background-size: cover;
+}
+
+.__bg_blanco {
+  background-color: #FFFFFF;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+  padding: 2.5rem; }
+
+.minh-100 {
+  height: 100vh; }
+
+.uss-logotipo {
+  z-index: 10; }
+
+.__logo {
+  width: 100%;
+  padding: 0px 0px 30px 0px; }
+  .__logo img {
+    width: 70%;
+    transition: all 0.3s ease 0s; }
+
+.__alerta {
+  padding: 10px 0px 0px 0px;
+  font-size: 0.9em; }
+  .__alerta p {
+    color: red; }
+
+@media (min-width: 300px) and (max-width: 813px) {
+  .__bg_verde {
+    background-color: #FFFFFF;
+    background: none; }
+
+  .__bg_blanco {
+    background-color: #FFFFFF;
+    box-shadow: 0 0px 0px rgba(0, 0, 0, 0.16);
+    padding: 2.5rem; }
+
+  .__logo {
+    width: 100%;
+    padding: 0px 0px 30px 0px; }
+    .__logo img {
+      width: 70%; } }
+@media (min-width: 814px) and (max-width: 1199px) {
+  .__logo {
+    width: 100%;
+    padding: 0px 0px 30px 0px; }
+    .__logo img {
+      width: 80%; } }
+
+/*# sourceMappingURL=master_intra.css.map */body {
+}
