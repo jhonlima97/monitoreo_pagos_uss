@@ -51,8 +51,8 @@ por banco, manualmente, contra los reportes de cada entidad.
 |--------|----------------|----------------------------|
 | BBVA   | Banco BBVA     | Recaudación bancaria       |
 | BCP    | Banco BCP      | Recaudación bancaria       |
-| BiPay  | Empresa Bitel  | Pasarela de pago           |
-| GKN    | Banco KasNet   | Agente / red de cobranza   |
+| BIPAY  | Empresa Bitel  | Recaudación bancaria       |
+| GKN    | Banco KasNet   | Recaudación bancaria       |
 
 Cada banco se integra a través de:
 
