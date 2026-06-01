@@ -267,4 +267,5 @@ serán removidos del historial.
 
 Código de propiedad de la Universidad Señor de Sipán; aquí se publica con fines
 únicamente de portafolio y documentación del trabajo realizado por mi autoría en
-los módulos identificados arriba. No usar en producción fuera de la USS.
+los módulos identificados arriba, el enlace a Producción, es estrictamente interno, 
+por lo que no se publica aquí. No usar en producción fuera de la USS.
