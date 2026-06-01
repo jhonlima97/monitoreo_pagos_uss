@@ -128,12 +128,11 @@ Aplicación en **3 capas** sobre ASP.NET WebForms + WCF (servicios `.svc`):
 | Lenguaje              | C#                               |
 | UI                    | ASP.NET WebForms + Bootstrap 4.3 |
 | Servicios             | WCF (webHttpBinding / AJAX)      |
-| Base de datos         | SQL Server                       |
-| ORM / acceso a datos  | ADO.NET + `dll_Integrated` (lib interna) |
-| Front-end             | jQuery 1.10 / jQuery UI / moment.js |
-| Reportes / PDF        | iTextSharp 5.5                   |
+| Base de datos         | Microsoft SQL Server             |
+| ORM / acceso a datos  | ADO.NET + `dll_Integrated`       |
+| Front-end             | jQuery 1.10 / jQuery UI          |
 | JSON                  | Newtonsoft.Json 13.0             |
-| Hospedaje             | IIS                              |
+| Hosting               | IIS                              |
 
 ---
 
@@ -198,9 +197,9 @@ monitoreo_pagos_uss/
 
 ### Requisitos
 
-- Windows con Visual Studio 2019/2022
+- Windows con Visual Studio 2022
 - .NET Framework 4.8 Developer Pack
-- IIS o IIS Express
+- Internet Information Services  - IIS
 - SQL Server (instancia con la BD `ASBANC` / `BDSipan` y sus SPs)
 - Acceso a la red interna USS (los servidores SQL están en IPs privadas)
 

@@ -1,5 +1,6 @@
 ﻿var arrayConciliacionBiPay = [];
 var reader = new FileReader();
+
 function onChangeBiPay(event) {
     var file = event.target.files[0];
     if (!file) return;
@@ -32,15 +33,46 @@ function onLoadBipay() {
         return;
     }
 
-    // 2) Construir lista de recibos (campo índice 5 según spec 5.6/5.7) para consultar al backend
-    var recibos = [];
-    for (var i = 1; i < lineas.length; i++) {
-        var c = lineas[i].split('|');
-        if (c.length >= 6) recibos.push(c[5]);
-    }
-    var cuentas = recibos.join(',');
+    // 2) Expandir líneas -> filas lógicas.
+    //    El campo índice 5 (N° Recibo) puede traer 1..N recibos separados por coma
+    var filas = [];          // filas lógicas a pintar
+    var recibosUnicos = [];  // lista plana de recibos individuales para consultar al backend
 
-    // 3) Consultar estado en USS
+    for (var i = 1; i < lineas.length; i++) {
+        var campos = lineas[i].split('|');
+        if (campos.length < 12) continue;
+
+        var recibosLinea = campos[5]
+            .split(',')
+            .map(function (r) { return r.trim(); })
+            .filter(function (r) { return r !== ''; });
+
+        var nRecibos = recibosLinea.length;
+
+        for (var r = 0; r < nRecibos; r++) {
+            filas.push({
+                identificacion: campos[0],
+                nombreCliente: campos[1],
+                fechaPago: formatearFecha(campos[2]), // DDMMYYYY -> DD/MM/YYYY
+                nombreServicio: campos[3],
+                idServicio: campos[4],
+                nroRecibo: recibosLinea[r],
+                nroOpBipay: campos[6],
+                rucPartner: campos[7],
+                nombrePartner: campos[8],
+                codCompania: campos[9],
+                moneda: campos[10],
+                montoCsvLinea: parseFloat(campos[11]) || 0, // monto COMBINADO de la línea
+                recibosEnLinea: nRecibos,
+                idxEnLinea: r
+            });
+            recibosUnicos.push(recibosLinea[r]);
+        }
+    }
+
+    var cuentas = recibosUnicos.join(',');
+
+    // 3) Consultar estado en USS. El SP devuelve { cCtaCteRecibo, nEstado }.
     var Data = {
         cDetalle: cuentas,
         cUsrCodigo: '-'
@@ -57,56 +89,60 @@ function onLoadBipay() {
 
             var htmlcur = '';
 
-            // 4) Pintar detalle (lineas[0] es la cabecera de columnas, la saltamos)
-            for (var i = 1; i < lineas.length; i++) {
-                var campos = lineas[i].split('|');
-                if (campos.length < 12) continue;
+            // 4) Pintar el detalle a partir de las filas lógicas
+            for (var f = 0; f < filas.length; f++) {
+                var fila = filas[f];
 
-                var identificacion = campos[0];
-                var nombreCliente = campos[1];
-                var fechaPago = formatearFecha(campos[2]); // DDMMYYYY -> DD/MM/YYYY
-                var nombreServicio = campos[3];
-                var idServicio = campos[4];
-                var nroRecibo = campos[5];
-                var nroOpBipay = campos[6];
-                var rucPartner = campos[7];
-                var nombrePartner = campos[8];
-                var codCompania = campos[9];
-                var moneda = campos[10];
-                var montoPagado = campos[11];
-
-                // Cruce con el estado del USS
-                var divImagen = "<img src='../img/eliminar1.png' style='width:17px' alt='no'>";
-                var divColor = "style='background-color: rgb(255 176 176 / 18%);'";
-                for (var j in arrayConciliacionBiPay) {
-                    if (arrayConciliacionBiPay[j]['cCtaCteRecibo'] == nroRecibo) {
-                        if (arrayConciliacionBiPay[j]['nEstado'] == 1) {
-                            divImagen = "<img src='../img/check1.png' style='width:17px' alt='no'>";
-                            divColor = '';
-                        }
+                // Cruce con USS por recibo INDIVIDUAL
+                var nEstado = 0;
+                for (var j = 0; j < arrayConciliacionBiPay.length; j++) {
+                    if (String(arrayConciliacionBiPay[j]['cCtaCteRecibo']).trim() === String(fila.nroRecibo).trim()) {
+                        nEstado = arrayConciliacionBiPay[j]['nEstado'];
                         break;
                     }
                 }
 
+                var divImagen = "<img src='../img/eliminar1.png' style='width:17px' alt='no'>";
+                var divColor = "style='background-color: rgb(255 176 176 / 18%);'";
+                if (nEstado == 1) {
+                    divImagen = "<img src='../img/check1.png' style='width:17px' alt='no'>";
+                    divColor = '';
+                }
+
+                // Monto por fila:
+                //  - 1 recibo en la línea  -> monto del CSV tal cual (formato antiguo)
+                //  - N recibos en la línea -> reparto del combinado entre N
+                var montoFila;
+                if (fila.recibosEnLinea === 1) {
+                    montoFila = fila.montoCsvLinea;
+                } else {
+                    var base = Math.floor((fila.montoCsvLinea / fila.recibosEnLinea) * 100) / 100;
+                    montoFila = (fila.idxEnLinea < fila.recibosEnLinea - 1)
+                        ? base
+                        : (fila.montoCsvLinea - base * (fila.recibosEnLinea - 1));
+                }
+
                 htmlcur += '<tr ' + divColor + '>';
-                htmlcur += '<td>' + identificacion + '</td>';
-                htmlcur += '<td>' + nombreCliente + '</td>';
-                htmlcur += '<td>' + fechaPago + '</td>';
-                htmlcur += '<td>' + nombreServicio + '</td>';
-                htmlcur += '<td>' + idServicio + '</td>';
-                htmlcur += '<td>' + nroRecibo + '</td>';
-                htmlcur += '<td>' + nroOpBipay + '</td>';
-                htmlcur += '<td>' + rucPartner + '</td>';
-                htmlcur += '<td>' + nombrePartner + '</td>';
-                htmlcur += '<td>' + codCompania + '</td>';
-                htmlcur += '<td>' + moneda + '</td>';
-                htmlcur += '<td style="text-align:right;">' + montoPagado + '</td>';
+                htmlcur += '<td>' + fila.identificacion + '</td>';
+                htmlcur += '<td>' + fila.nombreCliente + '</td>';
+                htmlcur += '<td>' + fila.fechaPago + '</td>';
+                htmlcur += '<td>' + fila.nombreServicio + '</td>';
+                htmlcur += '<td>' + fila.idServicio + '</td>';
+                htmlcur += '<td>' + fila.nroRecibo + '</td>';
+                htmlcur += '<td>' + fila.nroOpBipay + '</td>';
+                htmlcur += '<td>' + fila.rucPartner + '</td>';
+                htmlcur += '<td>' + fila.nombrePartner + '</td>';
+                htmlcur += '<td>' + fila.codCompania + '</td>';
+                htmlcur += '<td>' + fila.moneda + '</td>';
+                htmlcur += '<td style="text-align:right;">' + montoFila.toFixed(2) + '</td>';
                 htmlcur += '<td>' + divImagen + '</td>';
                 htmlcur += '</tr>';
             }
 
-            // 5) Totales calculados (BiPay no envía fila de totales)
-            var totalRegistros = lineas.length - 1;
+            // 5) Totales
+            //    - Registros: filas lógicas (un pago por recibo) -> el archivo nuevo da 2
+            //    - Monto total: suma del monto COMBINADO de cada LÍNEA del CSV (contado una
+            var totalRegistros = filas.length;
             var totalMonto = 0;
             for (var k = 1; k < lineas.length; k++) {
                 var cc = lineas[k].split('|');
@@ -162,8 +198,8 @@ function prov_LoadForm() {
         "            <div class='x_content'>" +
         "<div class='col-md-12'>" +
         "<form name='myForm' style='padding: 10px;border: 1px solid #ccc;background-color: #97d700;color: #4f4f4f;'>" +
-            "<label>Seleccione un archivo</label>" +
-            "<input name='myInput' type='file' accept='.csv' >" +
+        "<label>Seleccione un archivo</label>" +
+        "<input name='myInput' type='file' accept='.csv' >" +
         "</form>" +
         "</div>" +
         "<div style='padding-top: 10px;'></div>" +
@@ -172,23 +208,23 @@ function prov_LoadForm() {
         // ===== Detalle =====
         "<label style='background-color: #9d9d9d;padding: 2px;color: white;width: 100%;'>Detalle</label>" +
         "<table class='table tablaandy' style='margin-bottom: 10px;'>" +
-            "<thead>" +
-                "<tr>" +
-                "<td>Identificación del cliente</td>" +
-                "<td>Nombre del cliente</td>" +
-                "<td>Fecha de pago</td>" +
-                "<td>Nombre del servicio</td>" +
-                "<td>ID del servicio</td>" +
-                "<td>N° Recibo</td>" +
-                "<td>N° Operación BiPay</td>" +
-                "<td>RUC del partner</td>" +
-                "<td>Nombre de Partner</td>" +
-                "<td>Código de la compañía</td>" +
-                "<td>Moneda</td>" +
-                "<td style='text-align:right;'>Monto pagado</td>" +
-                "<td>Estado pago USS</td>" +
-                "</tr>" +
-            "</thead>" +
+        "<thead>" +
+        "<tr>" +
+        "<td>Identificación del cliente</td>" +
+        "<td>Nombre del cliente</td>" +
+        "<td>Fecha de pago</td>" +
+        "<td>Nombre del servicio</td>" +
+        "<td>ID del servicio</td>" +
+        "<td>N° Recibo</td>" +
+        "<td>N° Operación BiPay</td>" +
+        "<td>RUC del partner</td>" +
+        "<td>Nombre de Partner</td>" +
+        "<td>Código de la compañía</td>" +
+        "<td>Moneda</td>" +
+        "<td style='text-align:right;'>Monto pagado</td>" +
+        "<td>Estado pago USS</td>" +
+        "</tr>" +
+        "</thead>" +
         "<tbody id='listaCuerpo'>" +
         "</tbody>" +
         "</table>" +
@@ -196,12 +232,12 @@ function prov_LoadForm() {
         // ===== Totales =====
         "<label style='background-color: #9d9d9d;padding: 2px;color: white;width: 100%;'>Totales</label>" +
         "<table class='table' style='font-size: 10px;margin-bottom: 10px;'>" +
-            "<thead>" +
-                "<tr>" +
-                "<td>Total de registros</td>" +
-                "<td style='text-align:right;'>Monto total</td>" +
-                "</tr>" +
-            "</thead>" +
+        "<thead>" +
+        "<tr>" +
+        "<td>Total de registros</td>" +
+        "<td style='text-align:right;'>Monto total</td>" +
+        "</tr>" +
+        "</thead>" +
         "<tbody id='listaTotales'>" +
         "</tbody>" +
         "</table>" +
