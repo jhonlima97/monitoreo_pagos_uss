@@ -259,13 +259,12 @@ serán removidos del historial.
 - En **producción** en la empresa sigue corriendo bajo el nombre original (`75_BBVA_CONCILIACION`).
 - Este repositorio refleja la base de código pero con configuraciones y datos
   sensibles removidos.
-- Mantenido para portafolio / referencia personal.
+- El enlace a Producción, es netamente interno, por lo que no se publica aquí.
 
 ---
 
 ## Licencia y uso
 
-Código de propiedad de la Universidad Señor de Sipán; aquí se publica con fines
-únicamente de portafolio y documentación del trabajo realizado por mi autoría en
-los módulos identificados arriba, el enlace a Producción, es estrictamente interno, 
-por lo que no se publica aquí. No usar en producción fuera de la USS.
+Código de propiedad de la Universidad Señor de Sipán; aquí se publica con fines únicamente 
+de portafolio y documentación del trabajo realizado por mi autoría en los módulos identificados 
+arriba. Queda estrictamente prohibido usar, sin previa autorización de mi persona y de la entidad.
