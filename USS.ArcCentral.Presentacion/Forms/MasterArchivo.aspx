@@ -27,23 +27,24 @@
     <script src="../Scripts/jspdf.plugin.autotable.min.js"></script>-->
 
     <script src="../Scripts/Forms/jsCal_FrmParametro.js?ver=151515"></script> 
-    <script src="../Scripts/Forms/jsCal_FrmUsuarios.js?ver=151515"></script>    
-    <script src="../Scripts/Forms/jsSis_FrmServicios.js?ver=151515"></script>    
-    <script src="../Scripts/Forms/jsSis_FrmResumenBBVA.js?ver=151515"></script>
-    <script src="../Scripts/Forms/jsSis_FrmConciliacionBBVA.js?ver=151515"></script>
+    <script src="../Scripts/Forms/jsCal_FrmUsuarios.js?ver=151515"></script> 
+    
+    <script src="../Scripts/Forms/FrmMonitoreoBBVA.js?ver=151515"></script>    
+    <script src="../Scripts/Forms/FrmResumenBBVA.js?ver=151515"></script>
+    <script src="../Scripts/Forms/FrmConciliacionBBVA.js?ver=151515"></script>
 
-    <script src="../Scripts/Forms/jsSis_FrmMonitoreoBCP.js?ver=151515"></script>
-    <script src="../Scripts/Forms/jsSis_FrmResumenBCP.js?ver=151515"></script>
-    <script src="../Scripts/Forms/jsSis_FrmConciliacionBCP.js?ver=151515"></script>
+    <script src="../Scripts/Forms/FrmMonitoreoBCP.js?ver=151515"></script>
+    <script src="../Scripts/Forms/FrmResumenBCP.js?ver=151515"></script>
+    <script src="../Scripts/Forms/FrmConciliacionBCP.js?ver=151515"></script>
 
-    <script src="../Scripts/Forms/jsSis_FrmMonitoreoGKN.js?ver=151515"></script>
-    <script src="../Scripts/Forms/jsSis_FrmResumenGKN.js?ver=151515"></script>
-    <script src="../Scripts/Forms/jsSis_FrmConciliacionGKN.js?ver=151515"></script>
+    <script src="../Scripts/Forms/FrmMonitoreoGKN.js?ver=151515"></script>
+    <script src="../Scripts/Forms/FrmResumenGKN.js?ver=151515"></script>
+    <script src="../Scripts/Forms/FrmConciliacionGKN.js?ver=151515"></script>
 
     <%-- Modulo BiPay --%>
-    <script src="../Scripts/Forms/jsSis_FrmMonitoreoBipay.js?ver=151515"></script>
-    <script src="../Scripts/Forms/jsSis_FrmConciliacionBiPay.js?ver=151515"></script>
-    <script src="../Scripts/Forms/jsSis_FrmResumenBipay.js?ver=151515"></script>
+    <script src="../Scripts/Forms/FrmMonitoreoBIPAY.js?ver=151515"></script>
+    <script src="../Scripts/Forms/FrmConciliacionBIPAY.js?ver=151515"></script>
+    <script src="../Scripts/Forms/FrmResumenBIPAY.js?ver=151515"></script>
 
     <script src="../Scripts/Forms/jsSis_FrmResumenOnline.js?ver=151515"></script>
 

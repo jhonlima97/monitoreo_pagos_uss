@@ -180,11 +180,11 @@ function navegacion_ConciliacionBiPay_aspx() {
             "<div id='FormContenido'></div>";
         $("#Contenido").html(html);
         $("#Contenido").css('min-height', '660px');
-        prov_LoadForm();
+        prov_LoadForm_BIPAY();
     }
 }
 
-function prov_LoadForm() {
+function prov_LoadForm_BIPAY() {
     var html = "<style> .tdCabDet{background-color: #cdcdcd;color: #6f6f6f;} </style>" +
         "<div class='page-title'>" +
         "    <div class='title_left' >" +

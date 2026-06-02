@@ -15,9 +15,7 @@ namespace USS.ArcCentral.DataAccess
         {
         }
 
-        public Object Get_Listado_ConsultasBBVA(String cFecha,
-                                                String cFechaFin,
-                                                String cUsrCodigo,
+        public Object Get_Listado_ConsultasBBVA(String cFecha, String cFechaFin, String cUsrCodigo,
                                                 TypeData TypeData = TypeData.gTypeDataReader)
         {
             using (SqlCommand cmd = new SqlCommand("ASBANC.dbo.usp_BBVA_monitoreo_consultas"))

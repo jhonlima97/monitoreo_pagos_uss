@@ -30,9 +30,7 @@ namespace USS.ArcCentral.BusinessLogic.Entidades
         public int nProcesado { get; set; }
         public int nConCodigo { get; set; }
 
-        public IList<Object> Get_Listado_ConsultasBBVA(String fecha,
-                                                        String fechaFin,
-                                                        String cUsrCodigo,
+        public IList<Object> Get_Listado_ConsultasBBVA(String fecha, String fechaFin, String cUsrCodigo,
                                                     TypeData TypeData = TypeData.gTypeDataReader)
         {
             using (clsSistema objInsVirt = new clsSistema(true, false))
