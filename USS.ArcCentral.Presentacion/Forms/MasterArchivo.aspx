@@ -15,13 +15,11 @@
     <script  src="https://code.jquery.com/jquery-3.7.1.min.js" 
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     
-    <%--<script src="../Scripts/jquery-1.10.2.min.js"></script>--%>
     <script src="../Scripts/sessvars.js"></script>
     <script src="../Scripts/jsMenu.js"></script>
     <script src="../Scripts/jsImage.js"></script> 
-    <script src="../Scripts/jsModal.js"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<%--    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>--%>
 
     <!-- <script src="../Scripts/jspdf.min.js"></script>
     <script src="../Scripts/jspdf.plugin.autotable.min.js"></script>-->
