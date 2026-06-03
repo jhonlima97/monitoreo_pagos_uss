@@ -186,18 +186,6 @@ LocalDB/
 # ----------------------------------------------------------------------------
 # El sistema procesa archivos de conciliacion bancaria que pueden contener
 # datos personales (DNI, montos, cuentas). NO subir muestras reales.
-USS.ArcCentral.Presentacion/UploadFile/*
-!USS.ArcCentral.Presentacion/UploadFile/SubirArchivo.ashx
-!USS.ArcCentral.Presentacion/UploadFile/SubirArchivo.ashx.cs
-!USS.ArcCentral.Presentacion/UploadFile/.gitkeep
-
-USS.ArcCentral.Presentacion/Documentos/*
-!USS.ArcCentral.Presentacion/Documentos/.gitkeep
-
-# Reportes individuales generados (PDFs con datos de personas)
-USS.ArcCentral.Presentacion/ReporteIndividual/*
-!USS.ArcCentral.Presentacion/ReporteIndividual/.gitkeep
-
 # Cualquier extracto / reporte bancario en el repo
 *conciliacion*.xlsx
 *conciliacion*.xls

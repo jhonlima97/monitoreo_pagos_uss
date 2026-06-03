@@ -36,7 +36,7 @@ Aplicación web interna que permite:
 - **Consultar y filtrar** los pagos recibidos por fecha y por banco.
 - **Conciliar** automáticamente los pagos del banco contra los pagos
   registrados en el sistema académico/administrativo de la USS.
-- **Generar resúmenes** y reportes individuales de cada operación.
+- **Generar resúmenes** consolidados de los pagos por banco y en línea.
 - **Monitorear en línea** los pagos que ingresan a la institución por todas las
   vías habilitadas.
 
@@ -81,8 +81,7 @@ sobre la base existente:
 - **Migración de .NET Framework 4.5 → 4.8** en todos los proyectos de la
   solución, incluyendo ajustes de `web.config`, `httpRuntime targetFramework`,
   redirects de ensamblados (`Newtonsoft.Json` 13.x) y compatibilidad TLS.
-- Ampliación de los métodos de servicio en `clsSistema` y `clsCalidad` para
-  exponer los nuevos endpoints.
+- Ampliación de los métodos de servicio en `clsSistema` para los módulos de pago.
 - Renombrado funcional de la plataforma para reflejar su rol real:
   `75_BBVA_CONCILIACION` → `monitoreo_pagos_uss`.
 
@@ -96,9 +95,7 @@ Aplicación en **3 capas** sobre ASP.NET WebForms + WCF (servicios `.svc`):
 +----------------------------------------------------------+
 |  USS.ArcCentral.Presentacion        (Web / UI / WCF)     |
 |  - WebForms (.aspx) + master + scripts JS por módulo     |
-|  - Servicios WCF AJAX:                                   |
-|      srvGeneral, srvInterface, srvMenu,                  |
-|      srvPersona, srvUO                                   |
+|  - Servicios WCF AJAX: srvGeneral, srvPersona            |
 +----------------------------------------------------------+
                           |
                           v
@@ -111,7 +108,7 @@ Aplicación en **3 capas** sobre ASP.NET WebForms + WCF (servicios `.svc`):
                           v
 +----------------------------------------------------------+
 |  USS.ArcCentral.DataAccess                               |
-|  - clsSistema, clsCalidad, clsGenerico, clsLogin,        |
+|  - clsSistema, clsGenerico, clsLogin,                    |
 |    clsMails, clsConected                                 |
 |  - SQL Server (BD ASBANC / BDSipan)                      |
 |  - Procedimientos almacenados por banco                  |
@@ -150,7 +147,6 @@ monitoreo_pagos_uss/
 │   ├── App.config                      # *** IGNORADO: contiene credenciales
 │   ├── clsConected.cs
 │   ├── clsSistema.cs                   # Stored procs por banco
-│   ├── clsCalidad.cs
 │   ├── clsGenerico.cs
 │   ├── clsLogin.cs
 │   ├── clsMails.cs
@@ -179,10 +175,7 @@ monitoreo_pagos_uss/
     ├── Forms/
     │   ├── MasterArchivo.aspx
     │   ├── srvGeneral.svc
-    │   ├── srvInterface.svc
-    │   ├── srvMenu.svc
-    │   ├── srvPersona.svc
-    │   └── srvUO.svc
+    │   └── srvPersona.svc
     ├── Scripts/Forms/                  # JS por módulo / banco
     ├── CSS/
     ├── img/
@@ -242,10 +235,9 @@ Este es un repositorio **personal** que documenta el trabajo realizado. Por eso:
   - `Web_local.config`
   - `Web_produccion.config`
   - `bin/`, `obj/`, `*.dll.config`
-- **No se publican datos de personas**. Las carpetas `UploadFile/`,
-  `Documentos/` y `ReporteIndividual/` están ignoradas; cualquier archivo de
-  extracto bancario, PDF de boleta o reporte individual cargado en local
-  permanece local.
+- **No se publican datos de personas**. Los extractos bancarios que se procesan
+  para conciliación no se versionan (ver reglas `*conciliacion*` / `extracto*`
+  en `.gitignore`); cualquier muestra real permanece local.
 - **No se incluyen los `.dll` propietarios** (`dll_Integrated.dll`,
   `Integrated.dll`) ni el contenido de `packages/`.
 

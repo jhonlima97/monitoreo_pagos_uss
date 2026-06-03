@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using USS.ArcCentral.DataAccess;
 using System.Data.SqlClient;
 using dll_Integrated;
-using Integrated;
 
 namespace USS.ArcCentral.BusinessLogic.Entidades
 {

@@ -47,7 +47,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="clsCalidad.cs" />
     <Compile Include="clsConected.cs" />
     <Compile Include="clsGenerico.cs" />
     <Compile Include="clsLogin.cs" />

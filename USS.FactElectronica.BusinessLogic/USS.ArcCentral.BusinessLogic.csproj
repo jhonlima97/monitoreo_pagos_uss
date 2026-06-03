@@ -53,7 +53,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entidades\ComboVariosParametros.cs" />
     <Compile Include="Entidades\ConciliacionBiPay.cs" />
     <Compile Include="Entidades\ConciliacionGKN.cs" />
     <Compile Include="Entidades\Connected.cs" />
@@ -64,20 +63,14 @@
     <Compile Include="Entidades\ConsultasBIPAY.cs" />
     <Compile Include="Entidades\ConsultasGKN.cs" />
     <Compile Include="Entidades\IdentityUser.cs" />
-    <Compile Include="Entidades\Interface.cs" />
     <Compile Include="Entidades\ConciliacionBCP.cs" />
     <Compile Include="Entidades\PerImagen.cs" />
-    <Compile Include="Entidades\PermisosCalidad.cs" />
-    <Compile Include="Entidades\Persona.cs" />
-    <Compile Include="Entidades\PUGA.cs" />
     <Compile Include="Entidades\ResumenBBVA.cs" />
     <Compile Include="Entidades\ResumenBCP.cs" />
     <Compile Include="Entidades\ResumenBiPay.cs" />
     <Compile Include="Entidades\ResumenGKN.cs" />
     <Compile Include="Entidades\ResumenOnline.cs" />
-    <Compile Include="Entidades\UO.cs" />
     <Compile Include="Entidades\Usuario.cs" />
-    <Compile Include="Entidades\UsuarioCalidad.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

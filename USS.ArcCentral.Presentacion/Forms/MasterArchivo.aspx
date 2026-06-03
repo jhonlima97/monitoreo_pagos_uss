@@ -16,12 +16,8 @@
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     
     <script src="../Scripts/sessvars.js"></script>
-    <script src="../Scripts/jsImage.js"></script> 
+    <script src="../Scripts/jsImage.js"></script>
 
-<%--    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>--%>
-
-
-    
     <script src="../Scripts/Forms/FrmMonitoreoBBVA.js?ver=151515"></script>    
     <script src="../Scripts/Forms/FrmResumenBBVA.js?ver=151515"></script>
     <script src="../Scripts/Forms/FrmConciliacionBBVA.js?ver=151515"></script>
@@ -297,7 +293,7 @@
         <!-- footer content -->
         <footer>
           <div class="pull-right">
-            <a href="">SEUSS - Sistema estandarizado y unificado Señor de Sipán</a>
+            <span>SEUSS - Sistema estandarizado y unificado Señor de Sipán</span>
           </div>
           <div class="clearfix"></div>
         </footer>
@@ -306,7 +302,6 @@
     </div>
 
     <!-- jQuery -->
-    <%--<script src="../vendors/jquery/dist/jquery.min.js"></script>--%>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" 
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 
@@ -320,8 +315,6 @@
     <script>
         $(document).ready(function () {
             MenuTemporal();
-
-            // Reemplazo simple del toggle de Gentelella porque custom.min.js está comentado.
             $("#menu_toggle").off("click.menuToggle").on("click.menuToggle", function (e) {
                 e.preventDefault();
 
