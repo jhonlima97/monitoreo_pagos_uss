@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using dll_Integrated;
 using System.Data.SqlClient;
 
@@ -14,9 +11,7 @@ namespace USS.ArcCentral.DataAccess
         {
         }
 
-        public object Get_User(String cPerUsuCodigo,
-                              String cPerUsuClave,
-                              int bPerUsuClaCryp = 1,
+        public object Get_User(String cPerUsuCodigo, String cPerUsuClave, int bPerUsuClaCryp = 1,
                               TypeData TypeData = TypeData.gTypeDataReader)
         {
             using (SqlCommand cmd = new SqlCommand("sp_User_Validate"))
@@ -42,7 +37,6 @@ namespace USS.ArcCentral.DataAccess
                     // TODO: Liberar recursos administrados cuando se llamen explícitamente
                 }
 
-                // TODO: Liberar recursos no administrados compartidos
             }
             this.disposedValue = true;
         }
