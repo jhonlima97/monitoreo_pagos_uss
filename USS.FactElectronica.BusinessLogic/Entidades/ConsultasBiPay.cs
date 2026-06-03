@@ -10,7 +10,7 @@ using System.Data;
 
 namespace USS.ArcCentral.BusinessLogic.Entidades
 {
-    public class ConsultasBiPay : Integrated.LoadEntity
+    public class ConsultasBIPAY : Integrated.LoadEntity
     {
         public int nSolCodigo { get; set; }
         public int nSolTipo { get; set; }

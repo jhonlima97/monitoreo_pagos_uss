@@ -408,43 +408,7 @@ function moni_verPago(nSolCodigo) {
                         console.log(arrayConsultas[i]['cJsnCadena']);
                         console.log(syntaxHighlight(arrayConsultas[i]['cJsnCadena']));
                         $("#vistaJson").html(syntaxHighlight(arrayConsultas[i]['cJsnCadena']));
-                        // $("#ppRazon").html(arrayConsultas[i]['cProvRazon']);
-
-
                         
-                        /*
-                        // Trae documentos
-                        var Data = {
-                            cProvRuc: arrayConsultas[i]['cProvRUC'],
-                            cUsrCodigo: "-"
-                        };
-                        console.log(Data);
-                        $.ajax({
-                            type: "POST",
-                            url: "../Forms/srvProveedores.svc/Get_Listado_Proveedores",
-                            data: JSON.stringify(Data),
-                            contentType: "application/json; charset=utf-8",
-                            dataType: "json",
-                            success: function (response) {
-                                //console.log("mostrando departamentos");
-                                var foo = response.d;
-                                var htmlDoc = "";
-                                arrayProvDocumentos = response.d;
-
-                                //"<a href='https://campus.uss.edu.pe/Campus/DocInternos/DocCalidad/' target='_blank'>docuemtno ruc</a> <br>" +
-                                for (var j in arrayProvDocumentos) {
-                                    htmlDoc += "<a href='https://campus.uss.edu.pe/Campus/FileProv/" + calcularRuta(arrayProvDocumentos[j]["nIntCodigo"]) + "/" + arrayProvDocumentos[j]["cProvInsFilLink"] + "' target='_blank'>" + calcularNombreDoc(arrayProvDocumentos[j]["nIntCodigo"]) + "</a> <br>";
-                                }
-
-                                $("#ppDoc").html(htmlDoc);
-
-                            },
-                            error: function (result) {
-                                alert('ERROR ' + result.status + ' ' + result.statusText);
-                            }
-                        });
-                        */
-
                     }
 
                 }

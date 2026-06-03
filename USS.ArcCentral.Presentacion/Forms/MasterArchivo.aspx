@@ -16,16 +16,11 @@
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     
     <script src="../Scripts/sessvars.js"></script>
-    <script src="../Scripts/jsMenu.js"></script>
     <script src="../Scripts/jsImage.js"></script> 
 
 <%--    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>--%>
 
-    <!-- <script src="../Scripts/jspdf.min.js"></script>
-    <script src="../Scripts/jspdf.plugin.autotable.min.js"></script>-->
 
-    <script src="../Scripts/Forms/jsCal_FrmParametro.js?ver=151515"></script> 
-    <script src="../Scripts/Forms/jsCal_FrmUsuarios.js?ver=151515"></script> 
     
     <script src="../Scripts/Forms/FrmMonitoreoBBVA.js?ver=151515"></script>    
     <script src="../Scripts/Forms/FrmResumenBBVA.js?ver=151515"></script>

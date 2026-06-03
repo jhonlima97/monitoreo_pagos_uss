@@ -61,7 +61,7 @@
     <Compile Include="Entidades\ConciliacionBBVA.cs" />
     <Compile Include="Entidades\ConsultasBBVA.cs" />
     <Compile Include="Entidades\ConsultasBCP.cs" />
-    <Compile Include="Entidades\ConsultasBiPay.cs" />
+    <Compile Include="Entidades\ConsultasBIPAY.cs" />
     <Compile Include="Entidades\ConsultasGKN.cs" />
     <Compile Include="Entidades\IdentityUser.cs" />
     <Compile Include="Entidades\Interface.cs" />

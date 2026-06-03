@@ -250,26 +250,6 @@ function prov_LoadForm_BBVA(){
                 "</tbody>" +
             "</table>" +
         "</div>" +
-
-        /*"                <div class='table-responsive'>" +
-        "                    <table class='display' id='tabla_list_proveedores'>" +
-        "                        <thead>" +
-        "                            <tr>" +
-        "                               <th>RUC</th>" +
-        "                               <th style='width: 25%;'>Razón Social</th>" +
-        "                               <th>T. Persona</th>" +
-        "                               <th>Producto</th>" +
-        "                               <th>Teléfono</th>" +
-        "                               <th>Correo</th>" +
-        "                               <th></th>" +
-        "                            </tr>" +
-        "                        </thead>" +
-        "                        <tbody id='tabListaProveedores'>" +
-        "                        </tbody>" +
-        "                    </table>" +
-        "                </div>" +
-        "            </div>" +*/
-
         "        </div>" +
         "    </div>"+
         "</div>";
@@ -281,42 +261,4 @@ function prov_LoadForm_BBVA(){
         
         input.addEventListener('change', onChangeBBVA);
 
-        /*
-        var Data = {
-            cProvRuc: "",
-            cUsrCodigo: "-"
-        };
-        $.ajax({
-            type: "POST",
-            url: "../Forms/srvProveedores.svc/Get_Listado_Proveedores",
-            data: JSON.stringify(Data),
-            contentType: "application/json; charset=utf-8",
-            dataType: "json",
-            success: function (response) {
-                //console.log("mostrando departamentos");
-                //console.log(response);
-                console.log(response.d);
-                var foo = response.d;
-
-                arrayProveedores = response.d;
-                prov_LoadForm_lista_impresion();
-                //console.log(arrayProveedores);
-                var print = "";
-                var print1 = "";
-                var print2 = "";
-                print1 += "<option value='0'>Seleccione</option>";
-                print2 += "<option value='0'>Seleccione</option>";
-                $.each(foo, function (index, value) {
-                    print += "<option value='" + value.nConValor + "'>" + value.cConDescripcion + "</option>";
-                });
-                //print += "</select>";
-                $("#selectFormaPago1").html(print1 + print);
-                $("#selectFormaPago2").html(print2 + print);
-
-            },
-            error: function (result) {
-                alert('ERROR ' + result.status + ' ' + result.statusText);
-            }
-        });
-        */
 }

@@ -117,12 +117,12 @@ namespace USS.ArcCentral.Presentacion.Forms
          Modulo BiPay
          */
         [OperationContract]
-        public List<ConsultasBiPay> Get_Listado_ConsultasBiPay(String cFecha, String cFechaFin, String cUsrCodigo)
+        public List<ConsultasBIPAY> Get_Listado_ConsultasBiPay(String cFecha, String cFechaFin, String cUsrCodigo)
         {
-            ConsultasBiPay d = new ConsultasBiPay();
+            ConsultasBIPAY d = new ConsultasBIPAY();
             IList<Object> iEscuela = d.Get_Listado_ConsultasBiPay(cFecha, cFechaFin, cUsrCodigo);
             String sEscuela = JsonConvert.SerializeObject(iEscuela);
-            List<ConsultasBiPay> lEscuela = JsonConvert.DeserializeObject<List<ConsultasBiPay>>((String)sEscuela);
+            List<ConsultasBIPAY> lEscuela = JsonConvert.DeserializeObject<List<ConsultasBIPAY>>((String)sEscuela);
             return lEscuela;
         }
 
