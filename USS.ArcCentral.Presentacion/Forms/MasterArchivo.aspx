@@ -221,7 +221,7 @@
             -ms-user-select: none;
         }
     </style>
-    <link href="../CSS/estilos.css" rel="stylesheet"/>
+
 </head>
 <body class="nav-md">
     <form id="form1" runat="server" class="form-horizontal"></form>
@@ -309,7 +309,7 @@
      <script src="https://cdn.datatables.net/2.3.8/js/dataTables.bootstrap5.min.js"></script>
     <div id="m_preload">
         <div>
-            <img src="../img/Icon/pre3.gif" alt=""/>
+            <img src="../img/pre3.gif" alt=""/>
         </div>
     </div>
     <script>
