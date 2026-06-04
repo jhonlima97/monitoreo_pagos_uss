@@ -41,7 +41,7 @@ function onLoadBBVA() {
     //Consulta los recibos
     var Data = {
         cDetalle: cuentas,
-        cUsrCodigo: "-"
+        cUsrCodigo: cPerCodigoActual
     };
     $.ajax({
         type: "POST",
@@ -157,7 +157,7 @@ function  subirDocumento() {
 
 var arrayProveedores = [];
 function navegacion_ConciliacionBBVA_aspx() {
-    if (sessvars.username != "") {
+    if (cPerCodigoActual != "") {
         var html = "<div class='modal fade bs-example-modal-sm' tabindex='-1' role='dialog' aria-hidden='true'>" +
             "   <div class='modal-dialog modal-sm'>" +
             "       <div id='DivModal' class='modal-content'>" +

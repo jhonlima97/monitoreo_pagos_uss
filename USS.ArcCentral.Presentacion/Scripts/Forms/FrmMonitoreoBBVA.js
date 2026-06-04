@@ -1,7 +1,7 @@
 ﻿
 var arrayConsultas = [];
 function navegacion_ServiciosBBVA_aspx() {
-    if (sessvars.username != "") {
+    if (cPerCodigoActual != "") {
         var html = "<div class='modal fade bs-example-modal-sm' tabindex='-1' role='dialog' aria-hidden='true'>" +
             "   <div class='modal-dialog modal-sm'>" +
             "       <div id='DivModal' class='modal-content'>" +
@@ -151,7 +151,7 @@ function moni_listarMonitoreo() {
     var Data = {
         cFecha: fechaGuiaInicio, //"20220412",
         cFechaFin: fechaGuiaFin,
-        cUsrCodigo: "1000397823"
+        cUsrCodigo: cPerCodigoActual
     };
     $.ajax({
         type: "POST",
@@ -163,22 +163,10 @@ function moni_listarMonitoreo() {
             //console.log("mostrando departamentos");
             //console.log(response);
             //console.log(response.d);
-            var foo = response.d;
 
             arrayConsultas = response.d;
             moni_LoadForm_lista_impresion();
-            //console.log(arrayConsultas);
-            /*var print = "";
-            var print1 = "";
-            var print2 = "";
-            print1 += "<option value='0'>Seleccione</option>";
-            print2 += "<option value='0'>Seleccione</option>";
-            $.each(foo, function (index, value) {
-                print += "<option value='" + value.nConValor + "'>" + value.cConDescripcion + "</option>";
-            });
-            //print += "</select>";
-            $("#selectFormaPago1").html(print1 + print);
-            $("#selectFormaPago2").html(print2 + print);*/
+            
 
         },
         error: function (result) {
@@ -219,23 +207,7 @@ function moni_LoadForm_lista_impresion() {
             }else{
                 validador++;
             }
-/*
-            if (cboProceso > 0) {
-                if (arrayConsultas[i]['nProceso'] == cboProceso ) {
-                    validador++;
-                }
-            }else{
-                validador++;
-            }
 
-            if (cboEstadoDoc > 0) {
-                if (arrayConsultas[i]['nSGCDocEstado'] == cboEstadoDoc ) {
-                    validador++;
-                }
-            }else{
-                validador++;
-            }*/
-            
 
             if (validador == 2) {
                 var stilo = "";
@@ -302,101 +274,7 @@ function moni_verPago(nSolCodigo) {
         content: '' +
             "            <div>" +
             "               <input type='hidden' id='pnSolCodigo' value='0' />" +
-            "               <pre id='vistaJson'></pre>"+
-            /*"                <table class='table table-bordered tabla_detalle' style='width: 100%;'>" +
-            "                    <tbody>" +
-            "                        <tr>" +
-            "                            <td style='width: 20%;' class='tdCabDet'><b>RUC</b></td>" +
-            "                            <td style='width: 30%;' id='ppRuc'></td>" +
-            "                            <td style='width: 20%;' class='tdCabDet'><b>Razón Social</b></td>" +
-            "                            <td style='width: 30%;' id='ppRazon'></td>" +
-            "                        </tr>" +
-            "                        <tr>" +
-            "                            <td class='tdCabDet' ><b>Tipo persona</b></td>" +
-            "                            <td id='ppTipoPer'></td>" +
-            "                            <td class='tdCabDet'><b>Agente de retención</b></td>" +
-            "                            <td id='ppRet'></td>" +
-            "                        </tr>" +
-            "                        <tr>" +
-            "                            <td class='tdCabDet'><b>Domicilio</b></td>" +
-            "                            <td colspan='3' id='ppDomi'></td>" +
-            "                        </tr>" +
-            "                        <tr>" +
-            "                            <td class='tdCabDet' ><b>Teléfono</b></td>" +
-            "                            <td id='ppTel'></td>" +
-            "                            <td class='tdCabDet'><b>Correo</b></td>" +
-            "                            <td id='ppCor'></td>" +
-            "                        </tr>" +
-            "                        <tr>" +
-            "                            <td class='tdCabDet'><b>Representante Legal </b></td>" +
-            "                            <td id='ppRepLeg'></td>" +
-            "                            <td class='tdCabDet' ><b>Fecha de inicio de operaciones</b></td>" +
-            "                            <td id='ppFecOpe'></td>" +
-            "                        </tr>" +
-            "                        <tr>" +
-            "                            <td class='tdCabDet' ><b>Contacto </b></td>" +
-            "                            <td id='ppCont'></td>" +
-            "                            <td class='tdCabDet'><b>Correo de contacto </b></td>" +
-            "                            <td id='ppContCorr'></td>" +
-            "                        </tr>" +
-            "                        <tr>" +
-            "                            <td class='tdCabDet'><b>Nº de sucursales</b></td>" +
-            "                            <td colspan='3' id='ppSucur'></td>" +
-            "                        </tr>" +
-            "                        <tr>" +
-            "                            <td class='tdCabDet'><b>Producto</b></td>" +
-            "                            <td  id='ppPro'></td>" +
-            "                            <td class='tdCabDet'><b>CIU</b></td>" +
-            "                            <td  id='ppCiu'></td>" +
-            "                        </tr>" +
-            "                        <tr>" +
-            "                            <td class='tdCabDet'><b>Forma Pago 1</b></td>" +
-            "                            <td  id='ppPago1'></td>" +
-            "                            <td class='tdCabDet'><b>Cantidad de días</b></td>" +
-            "                            <td  id='ppPagoDias1'></td>" +
-            "                        </tr>" +
-            "                        <tr id='divForPago2'>" +
-            "                            <td class='tdCabDet'><b>Forma Pago 2</b></td>" +
-            "                            <td  id='ppPago2'></td>" +
-            "                            <td class='tdCabDet'><b>Cantidad de días</b></td>" +
-            "                            <td  id='ppPagoDias2'></td>" +
-            "                        </tr>" +
-            "                        <tr>" +
-            "                            <td class='tdCabDet'><b>Cuenta 1</b></td>" +
-            "                            <td  id='ppCuenta1'></td>" +
-            "                            <td class='tdCabDet'><b>Número de cuenta 1</b></td>" +
-            "                            <td  id='ppCuentaNum1'></td>" +
-            "                        </tr>" +
-            "                        <tr>" +
-            "                            <td class='tdCabDet'><b>Cuenta 2</b></td>" +
-            "                            <td  id='ppCuenta2'></td>" +
-            "                            <td class='tdCabDet'><b>Número de cuenta 2</b></td>" +
-            "                            <td  id='ppCuentaNum2'></td>" +
-            "                        </tr>" +
-            "                        <tr>" +
-            "                            <td class='tdCabDet'><b>Cuenta Detracción </b></td>" +
-            "                            <td  id='ppCuenta3'></td>" +
-            "                            <td class='tdCabDet'><b>Número de cuenta detracción</b></td>" +
-            "                            <td  id='ppCuentaNum3'></td>" +
-            "                        </tr>" +
-            "                        <tr>" +
-            "                            <td class='tdCabDet'><b>Referencia 1</b></td>" +
-            "                            <td colspan='3' id='ppRef1'></td>" +
-            "                        </tr>" +
-            "                        <tr id='divppRef2'>" +
-            "                            <td class='tdCabDet'><b>Referencia 2</b></td>" +
-            "                            <td colspan='3' id='ppRef2'></td>" +
-            "                        </tr>" +
-            "                        <tr id='divppRef3'>" +
-            "                            <td class='tdCabDet'><b>Referencia 3</b></td>" +
-            "                            <td colspan='3' id='ppRef3'></td>" +
-            "                        </tr>" +
-            "                        <tr>" +
-            "                            <td class='tdCabDet'><b>Documentos</b></td>" +
-            "                            <td colspan='3' id='ppDoc'></td>" +
-            "                        </tr>" +
-            "                    </tbody>" +
-            "                </table>" +*/
+            "               <pre id='vistaJson'></pre>" +            
             "            </div>",
         onOpen: function () {
             if (nSolCodigo > 0) {

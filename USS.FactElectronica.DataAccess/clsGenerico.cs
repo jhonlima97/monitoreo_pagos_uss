@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using dll_Integrated;
 using System.Data.SqlClient;
 
@@ -12,7 +12,7 @@ namespace USS.ArcCentral.DataAccess
         {
         }
 
-        public Object Get_PerImagen(String pcPerCodigo, 
+        public Object Get_PerImagen(String pcPerCodigo,
                                     TypeData TypeData = TypeData.gTypeDataReader)
         {
             using (SqlCommand cmd = new SqlCommand("dbo.usp_Administ_Get_PerImagen_Persona"))
@@ -21,43 +21,5 @@ namespace USS.ArcCentral.DataAccess
                 return this.Get_objData_With_Connexion(cmd, System.Data.CommandType.StoredProcedure, TypeData, Cn, Trans);
             }
         }
-
-        public Object Get_Constante(int pnConCodigo,
-                                     TypeData TypeData = TypeData.gTypeDataReader)
-        {
-            using (SqlCommand cmd = new SqlCommand("sp_Constante_Get"))
-            {
-                cmd.Parameters.Add("@nConCodigo", System.Data.SqlDbType.Int).Value = pnConCodigo;
-                return this.Get_objData_With_Connexion(cmd, System.Data.CommandType.StoredProcedure, TypeData, Cn, Trans);
-            }
-        }
-
-        /*add andy 15-03-2022*/
-        public Object Get_Obj_Interface(int pnTipo = 0,
-                                int pnIntClase = 0,
-                                TypeData TypeData = TypeData.gTypeDataReader)
-        {
-            using (SqlCommand cmd = new SqlCommand("sp_Interface_Get"))
-            {
-                cmd.Parameters.Add("@nTipo", System.Data.SqlDbType.Int).Value = pnTipo;
-                cmd.Parameters.Add("@nIntClase", System.Data.SqlDbType.Int).Value = pnIntClase;
-
-                return this.Get_objData_With_Connexion(cmd, System.Data.CommandType.StoredProcedure, TypeData, Cn, Trans);
-            }
-        }
-
-        public Object Get_Constante_Proveedor(int nConCodigo,
-                                             int nTipo = 0,
-                                             TypeData TypeData = TypeData.gTypeDataReader)
-        {
-            using (SqlCommand cmd = new SqlCommand("sp_Constante_Get"))
-            {
-                cmd.Parameters.Add("@nConCodigo", System.Data.SqlDbType.Int).Value = nConCodigo;
-                cmd.Parameters.Add("@nTipo", System.Data.SqlDbType.Int).Value = nTipo;
-                return this.Get_objData_With_Connexion(cmd, System.Data.CommandType.StoredProcedure, TypeData, Cn, Trans);
-            }
-        }
-
     }
-
 }

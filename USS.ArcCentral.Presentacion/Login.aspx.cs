@@ -1,13 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
-using dll_Integrated;
-using System.Data.SqlClient;
-using System.Data;
-using System.Reflection;
 using System.Web.Security;
 using USS.ArcCentral.BusinessLogic.Entidades;
 
@@ -40,8 +33,6 @@ namespace USS.ArcCentral.Presentacion
             }
         }
 
-
-
         protected void ImgIngresar_Click(object sender, EventArgs e)
         {
             bool IsApproved = false;
@@ -50,7 +41,6 @@ namespace USS.ArcCentral.Presentacion
             UserName.Text = UserName.Text.ToUpper();
             string User = this.UserName.Text;
             string Pass = this.Password.Text;
-            //Session["UserName"] = User;
 
             if ((string.IsNullOrEmpty(User)) || (string.IsNullOrEmpty(Pass)))
             {
@@ -59,12 +49,10 @@ namespace USS.ArcCentral.Presentacion
 
             try
             {
-                //Seuss.EnterpriseLibrary.Types.Usuario Usuario = new Seuss.EnterpriseLibrary.Types.Usuario(User, Pass);
 
-                //BLUsuario ObjUsuario = new BLUsuario();
                 //BEUsuario usu = ObjUsuario.GetValidaUsuario(Convert.ToString(Usuario.cPerUsuCodigo), Convert.ToString(Usuario.cPerUsuClave));
                 //List<BEUsuario> lista = ObjUsuario.GetValidaListUsuario(Convert.ToString(Usuario.cPerUsuCodigo), Convert.ToString(Usuario.cPerUsuClave));
-                Usuario U = new Usuario();
+                PerUsuario U = new PerUsuario();
                 U.Load(User, Pass);
 
                 if (U.cPerCodigo != "")
@@ -96,7 +84,6 @@ namespace USS.ArcCentral.Presentacion
                     if (IsApproved)
                     {
                         //Creando Cookie de Autenticacion
-                        //Page.ClientScript.RegisterStartupScript(this.GetType(), "myScript", "VarActualDatos('" + U.cPerUsuCodigo + "','" + U.cPerUsuClave + "')", true);
                         bool IsPersistent = RememberMe.Checked;
 
                         //FormsAuthentication.SetAuthCookie(UserName, IsPersistent)

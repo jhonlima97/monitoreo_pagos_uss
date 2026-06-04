@@ -7,6 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>USS - Interconexión</title>
+    <link rel="icon" type="image/x-icon" href="../img/USS.ico" />
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" 
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
@@ -15,7 +16,6 @@
     <script  src="https://code.jquery.com/jquery-3.7.1.min.js" 
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     
-    <script src="../Scripts/sessvars.js"></script>
     <script src="../Scripts/jsImage.js"></script>
 
     <script src="../Scripts/Forms/FrmMonitoreoBBVA.js?ver=151515"></script>    
@@ -35,20 +35,20 @@
     <script src="../Scripts/Forms/FrmConciliacionBIPAY.js?ver=151515"></script>
     <script src="../Scripts/Forms/FrmResumenBIPAY.js?ver=151515"></script>
 
-    <script src="../Scripts/Forms/jsSis_FrmResumenOnline.js?ver=151515"></script>
+    <script src="../Scripts/Forms/FrmResumenOnline.js?ver=151515"></script>
 
 
     <script type="text/javascript">
+        // Codigo de persona del usuario autenticado, inyectado por el servidor (Master()).
+        // La identidad viene del ticket FormsAuth (server-side), no de almacenamiento del cliente.
+        var cPerCodigoActual = "";
         function Master(cPerCodigo) {
-            //console.log(cPerCodigo);
-            sessvars.username = cPerCodigo;
-            if (sessvars.username != "") {
-                //MenuMasterHor(sessvars.username);
-                Get_PerImage(sessvars.username);
+            cPerCodigoActual = cPerCodigo;
+            if (cPerCodigoActual != "") {
+                Get_PerImage(cPerCodigoActual);
             }
         }
         function MenuTemporal() {
-            //alert("hhaa");
 
             var menu = "" +
                 "<ul class='nav side-menu'>" +

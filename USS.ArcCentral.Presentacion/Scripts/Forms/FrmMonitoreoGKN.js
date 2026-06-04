@@ -2,7 +2,7 @@
 var arrayMonitoreoBCP = [];
 
 function navegacion_ServiciosGKN_aspx() {
-    if (sessvars.username != "") {
+    if (cPerCodigoActual != "") {
         var html = "<div class='modal fade bs-example-modal-sm' tabindex='-1' role='dialog' aria-hidden='true'>" +
             "   <div class='modal-dialog modal-sm'>" +
             "       <div id='DivModal' class='modal-content'>" +
@@ -152,7 +152,7 @@ function moni_listarMonitoreoGKN() {
     var Data = {
         cFecha: fechaGuiaInicio, //"20220412",
         cFechaFin: fechaGuiaFin,
-        cUsrCodigo: sessvars.cUsrCodigo
+        cUsrCodigo: cPerCodigoActual
     };
     $.ajax({
         type: "POST",

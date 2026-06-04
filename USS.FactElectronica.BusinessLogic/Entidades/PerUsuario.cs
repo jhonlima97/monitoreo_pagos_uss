@@ -1,0 +1,27 @@
+using System;
+using USS.ArcCentral.DataAccess;
+using System.Data.SqlClient;
+using dll_Integrated;
+
+namespace USS.ArcCentral.BusinessLogic.Entidades
+{
+    public class PerUsuario : Integrated.LoadEntity
+    {
+        public String cPerCodigo { get; set; }
+        public String cPerUsuCodigo { get; set; }
+        public String cPerUsuClave { get; set; }
+        public String cPerApellido { get; set; }
+        public String cPerNombre { get; set; }
+        public int cPerUsuEstado { get; set; }
+
+        public void Load(String pcPerUsuCodigo, String pcPerUsuClave, TypeData TypeData = TypeData.gTypeDataReader)
+        {
+            using (clsLogin objLog = new clsLogin(true, false))
+            {
+                SqlDataReader dr = (SqlDataReader)objLog.Get_User(pcPerUsuCodigo, pcPerUsuClave, 1, TypeData);
+                Load(this, dr);
+                objLog.Cn.Close();
+            }
+        }
+    }
+}

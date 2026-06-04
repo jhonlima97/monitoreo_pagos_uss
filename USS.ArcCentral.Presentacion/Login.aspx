@@ -5,15 +5,9 @@
 <head runat="server" lang="es">
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="keywords" content="distancia, educacion a distancia, traslado, uss, universidad señor de sipán, 
-        estudia en la uss, Medicina Humana, Enfermería, Estomatología, Administración, Administración Pública, 
-        Contabilidad, Negocios Internacionales, Turismo y Negocios, Derecho, Ciencias de la Comunicación, 
-        Psicología, Artes y Diseño Gráfico Empresarial, Trabajo Social, Arquitectura, 
-        Ingeniería Agroindustrial y Comercio Exterior, Ingeniería Civil, Ingeniería de Sistemas, 
-        Ingeniería Industrial, Ingeniería Mecánica Eléctrica, Ingeniería Económica" />
     <meta name="author" content="USS" />
-    <!-- <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png" /> -->
-    <title>USS UNIVERSIDAD SEÑOR DE SIPÁN</title>
+    <link rel="icon" type="image/x-icon" href="img/USS.ico" />
+    <title>UNIVERSIDAD SEÑOR DE SIPÁN</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" />
     <link href="CSS/master_intra.css" rel="stylesheet" />

@@ -1,7 +1,7 @@
 ﻿var arrayMonitoreoBiPay = [];
 
 function navegacion_ServiciosBiPay_aspx() {
-    if (sessvars.username != "") {
+    if (cPerCodigoActual != "") {
         var html = "<div class='modal fade bs-example-modal-sm' tabindex='-1' role='dialog' aria-hidden='true'>" +
             "   <div class='modal-dialog modal-sm'>" +
             "       <div id='DivModal' class='modal-content'>" +
@@ -125,7 +125,7 @@ function moni_listarMonitoreoBiPay() {
     var Data = {
         cFecha: fechaBiPayInicio,
         cFechaFin: fechaBiPayFin,
-        cUsrCodigo: sessvars.cUsrCodigo
+        cUsrCodigo: cPerCodigoActual
     };
 
     $.ajax({

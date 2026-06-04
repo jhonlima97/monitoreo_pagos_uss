@@ -55,8 +55,6 @@
   <ItemGroup>
     <Compile Include="Entidades\BIPAY\ConciliacionBIPAY.cs" />
     <Compile Include="Entidades\KASNET\ConciliacionGKN.cs" />
-    <Compile Include="Entidades\Connected.cs" />
-    <Compile Include="Entidades\Constante.cs" />
     <Compile Include="Entidades\BBVA\ConciliacionBBVA.cs" />
     <Compile Include="Entidades\BBVA\ConsultasBBVA.cs" />
     <Compile Include="Entidades\BCP\ConsultasBCP.cs" />
@@ -70,7 +68,7 @@
     <Compile Include="Entidades\BIPAY\ResumenBIPAY.cs" />
     <Compile Include="Entidades\KASNET\ResumenGKN.cs" />
     <Compile Include="Entidades\ResumenOnline.cs" />
-    <Compile Include="Entidades\Usuario.cs" />
+    <Compile Include="Entidades\PerUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
