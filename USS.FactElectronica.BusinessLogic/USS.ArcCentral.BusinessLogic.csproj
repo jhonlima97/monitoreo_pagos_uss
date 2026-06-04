@@ -53,22 +53,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entidades\ConciliacionBiPay.cs" />
-    <Compile Include="Entidades\ConciliacionGKN.cs" />
+    <Compile Include="Entidades\BIPAY\ConciliacionBIPAY.cs" />
+    <Compile Include="Entidades\KASNET\ConciliacionGKN.cs" />
     <Compile Include="Entidades\Connected.cs" />
     <Compile Include="Entidades\Constante.cs" />
-    <Compile Include="Entidades\ConciliacionBBVA.cs" />
-    <Compile Include="Entidades\ConsultasBBVA.cs" />
-    <Compile Include="Entidades\ConsultasBCP.cs" />
-    <Compile Include="Entidades\ConsultasBIPAY.cs" />
-    <Compile Include="Entidades\ConsultasGKN.cs" />
+    <Compile Include="Entidades\BBVA\ConciliacionBBVA.cs" />
+    <Compile Include="Entidades\BBVA\ConsultasBBVA.cs" />
+    <Compile Include="Entidades\BCP\ConsultasBCP.cs" />
+    <Compile Include="Entidades\BIPAY\ConsultasBIPAY.cs" />
+    <Compile Include="Entidades\KASNET\ConsultasGKN.cs" />
     <Compile Include="Entidades\IdentityUser.cs" />
-    <Compile Include="Entidades\ConciliacionBCP.cs" />
+    <Compile Include="Entidades\BCP\ConciliacionBCP.cs" />
     <Compile Include="Entidades\PerImagen.cs" />
-    <Compile Include="Entidades\ResumenBBVA.cs" />
-    <Compile Include="Entidades\ResumenBCP.cs" />
-    <Compile Include="Entidades\ResumenBiPay.cs" />
-    <Compile Include="Entidades\ResumenGKN.cs" />
+    <Compile Include="Entidades\BBVA\ResumenBBVA.cs" />
+    <Compile Include="Entidades\BCP\ResumenBCP.cs" />
+    <Compile Include="Entidades\BIPAY\ResumenBIPAY.cs" />
+    <Compile Include="Entidades\KASNET\ResumenGKN.cs" />
     <Compile Include="Entidades\ResumenOnline.cs" />
     <Compile Include="Entidades\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -79,12 +79,7 @@
       <Name>USS.ArcCentral.DataAccess</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Entidades\BBVA\" />
-    <Folder Include="Entidades\BCP\" />
-    <Folder Include="Entidades\BIPAY\" />
-    <Folder Include="Entidades\KASNET\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

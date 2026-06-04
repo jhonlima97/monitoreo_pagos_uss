@@ -10,7 +10,7 @@ using System.Data;
 
 namespace USS.ArcCentral.BusinessLogic.Entidades
 {
-    public class ResumenBiPay : Integrated.LoadEntity
+    public class ResumenBIPAY : Integrated.LoadEntity
     {
         public int Tipo { get; set; }
         public String fechaOperacion { get; set; }

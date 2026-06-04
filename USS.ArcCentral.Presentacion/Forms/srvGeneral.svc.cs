@@ -128,22 +128,22 @@ namespace USS.ArcCentral.Presentacion.Forms
 
         
         [OperationContract]
-        public List<ResumenBiPay> Get_Listado_ResumenBiPay()
+        public List<ResumenBIPAY> Get_Listado_ResumenBiPay()
         {
-            ResumenBiPay d = new ResumenBiPay();
+            ResumenBIPAY d = new ResumenBIPAY();
             IList<Object> iEscuela = d.Get_Listado_ResumenBiPay();
             String sEscuela = JsonConvert.SerializeObject(iEscuela);
-            List<ResumenBiPay> lEscuela = JsonConvert.DeserializeObject<List<ResumenBiPay>>((String)sEscuela);
+            List<ResumenBIPAY> lEscuela = JsonConvert.DeserializeObject<List<ResumenBIPAY>>((String)sEscuela);
             return lEscuela;
         }
 
         [OperationContract]
-        public List<ConciliacionBiPay> Get_Listado_ConciliacionBiPay(String cDetalle, String cUsrCodigo)
+        public List<ConciliacionBIPAY> Get_Listado_ConciliacionBiPay(String cDetalle, String cUsrCodigo)
         {
-            ConciliacionBiPay d = new ConciliacionBiPay();
+            ConciliacionBIPAY d = new ConciliacionBIPAY();
             IList<Object> iEscuela = d.Get_Listado_ConciliacionBiPay(cDetalle, cUsrCodigo);
             String sEscuela = JsonConvert.SerializeObject(iEscuela);
-            List<ConciliacionBiPay> lEscuela = JsonConvert.DeserializeObject<List<ConciliacionBiPay>>((String)sEscuela);
+            List<ConciliacionBIPAY> lEscuela = JsonConvert.DeserializeObject<List<ConciliacionBIPAY>>((String)sEscuela);
             return lEscuela;
         }
 

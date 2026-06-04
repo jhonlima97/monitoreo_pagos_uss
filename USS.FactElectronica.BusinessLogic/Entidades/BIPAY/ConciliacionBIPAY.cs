@@ -5,7 +5,7 @@ using System.Data.SqlClient;
 
 namespace USS.ArcCentral.BusinessLogic.Entidades
 {
-    public class ConciliacionBiPay : Integrated.LoadEntity
+    public class ConciliacionBIPAY : Integrated.LoadEntity
     {
 
         public String cCtaCteRecibo { get; set; }

@@ -127,7 +127,7 @@ Aplicación en **3 capas** sobre ASP.NET WebForms + WCF (servicios `.svc`):
 | Servicios             | WCF (webHttpBinding / AJAX)      |
 | Base de datos         | Microsoft SQL Server             |
 | ORM / acceso a datos  | ADO.NET + `dll_Integrated`       |
-| Front-end             | jQuery 1.10 / jQuery UI          |
+| Front-end             | jQuery / jQuery UI               |
 | JSON                  | Newtonsoft.Json 13.0             |
 | Hosting               | IIS                              |
 
@@ -248,7 +248,7 @@ serán removidos del historial.
 
 ## Estado
 
-- En **producción** en la empresa sigue corriendo bajo el nombre original (`75_BBVA_CONCILIACION`).
+- En **producción** en la empresa sigue corriendo bajo el nombre original (`75_CONCILIACION`).
 - Este repositorio refleja la base de código pero con configuraciones y datos
   sensibles removidos.
 - El enlace a Producción, es netamente interno, por lo que no se publica aquí.
