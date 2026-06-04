@@ -57,7 +57,7 @@ table {
   font-size: 0.85rem;
   letter-spacing: 0.35px; }
   .alert a {
-    text-decoration: inline;
+    text-decoration: none;
     color: #97d700; }
 
 .alert-index {

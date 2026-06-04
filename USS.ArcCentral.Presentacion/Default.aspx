@@ -9,9 +9,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <div>
-    Procesando, un momento por favor ...
-    </div>
+        
     </form>
 </body>
 </html>

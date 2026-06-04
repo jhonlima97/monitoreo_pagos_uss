@@ -9,38 +9,37 @@
     <title>USS - Interconexión</title>
     <link rel="icon" type="image/x-icon" href="../img/USS.ico" />
     <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" 
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" rel="stylesheet" />
-    <link href="https://cdn.datatables.net/2.3.8/css/dataTables.bootstrap5.min.css" rel="stylesheet" />    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" rel="stylesheet" 
+        />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="https://cdn.datatables.net/2.3.8/css/dataTables.bootstrap4.min.css" rel="stylesheet" />    
     <script  src="https://code.jquery.com/jquery-3.7.1.min.js" 
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     
     <script src="../Scripts/jsImage.js"></script>
 
-    <script src="../Scripts/Forms/FrmMonitoreoBBVA.js?ver=151515"></script>    
-    <script src="../Scripts/Forms/FrmResumenBBVA.js?ver=151515"></script>
-    <script src="../Scripts/Forms/FrmConciliacionBBVA.js?ver=151515"></script>
+    <script src="../Scripts/Forms/FrmMonitoreoBBVA.js?ver=20260603"></script>    
+    <script src="../Scripts/Forms/FrmResumenBBVA.js?ver=20260603"></script>
+    <script src="../Scripts/Forms/FrmConciliacionBBVA.js?ver=20260603"></script>
 
-    <script src="../Scripts/Forms/FrmMonitoreoBCP.js?ver=151515"></script>
-    <script src="../Scripts/Forms/FrmResumenBCP.js?ver=151515"></script>
-    <script src="../Scripts/Forms/FrmConciliacionBCP.js?ver=151515"></script>
+    <script src="../Scripts/Forms/FrmMonitoreoBCP.js?ver=20260603"></script>
+    <script src="../Scripts/Forms/FrmResumenBCP.js?ver=20260603"></script>
+    <script src="../Scripts/Forms/FrmConciliacionBCP.js?ver=20260603"></script>
 
-    <script src="../Scripts/Forms/FrmMonitoreoGKN.js?ver=151515"></script>
-    <script src="../Scripts/Forms/FrmResumenGKN.js?ver=151515"></script>
-    <script src="../Scripts/Forms/FrmConciliacionGKN.js?ver=151515"></script>
+    <script src="../Scripts/Forms/FrmMonitoreoGKN.js?ver=20260603"></script>
+    <script src="../Scripts/Forms/FrmResumenGKN.js?ver=20260603"></script>
+    <script src="../Scripts/Forms/FrmConciliacionGKN.js?ver=20260603"></script>
 
     <%-- Modulo BiPay --%>
-    <script src="../Scripts/Forms/FrmMonitoreoBIPAY.js?ver=151515"></script>
-    <script src="../Scripts/Forms/FrmConciliacionBIPAY.js?ver=151515"></script>
-    <script src="../Scripts/Forms/FrmResumenBIPAY.js?ver=151515"></script>
+    <script src="../Scripts/Forms/FrmMonitoreoBIPAY.js?ver=20260603"></script>
+    <script src="../Scripts/Forms/FrmConciliacionBIPAY.js?ver=20260603"></script>
+    <script src="../Scripts/Forms/FrmResumenBIPAY.js?ver=20260603"></script>
 
-    <script src="../Scripts/Forms/FrmResumenOnline.js?ver=151515"></script>
+    <script src="../Scripts/Forms/FrmResumenOnline.js?ver=20260603"></script>
 
 
     <script type="text/javascript">
         // Codigo de persona del usuario autenticado, inyectado por el servidor (Master()).
-        // La identidad viene del ticket FormsAuth (server-side), no de almacenamiento del cliente.
         var cPerCodigoActual = "";
         function Master(cPerCodigo) {
             cPerCodigoActual = cPerCodigo;
@@ -222,6 +221,9 @@
         }
     </style>
 
+    <link href="../CSS/estilos.css" rel="stylesheet"/>
+
+
 </head>
 <body class="nav-md">
     <form id="form1" runat="server" class="form-horizontal"></form>
@@ -265,15 +267,15 @@
               <div class="nav toggle">
                 <a id="menu_toggle"><i class="fa fa-bars"></i></a>
               </div>
-              <ul class="nav navbar-nav ms-auto">
+              <ul class="nav navbar-nav ml-auto">
                     <li class="">
-                        <a href="javascript:;" class="user-profile dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                             <span id="username_rigth"></span> 
                         </a>
-                        <ul class="dropdown-menu dropdown-usermenu dropdown-menu-end">
+                        <ul class="dropdown-menu dropdown-usermenu dropdown-menu-right">
                             <li>
                                 <a href="#" onclick="CerrarSesion()">
-                                    <i class="fa fa-sign-out float-end"></i> Salir
+                                    <i class="fa fa-sign-out float-right"></i> Salir
                                 </a>
                             </li>
                         </ul>
@@ -302,11 +304,11 @@
     </div>
 
     <!-- jQuery -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" 
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" 
+        ></script>
 
     <script src="https://cdn.datatables.net/2.3.8/js/dataTables.min.js"></script>
-     <script src="https://cdn.datatables.net/2.3.8/js/dataTables.bootstrap5.min.js"></script>
+     <script src="https://cdn.datatables.net/2.3.8/js/dataTables.bootstrap4.min.js"></script>
     <div id="m_preload">
         <div>
             <img src="../img/pre3.gif" alt=""/>

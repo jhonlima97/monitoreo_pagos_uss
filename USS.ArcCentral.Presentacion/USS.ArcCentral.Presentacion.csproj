@@ -74,6 +74,8 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CSS\estilos.css" />
+    <Content Include="CSS\master.css" />
     <Content Include="CSS\master_intra.css" />
     <Content Include="Default.aspx" />
     <Content Include="Forms\MasterArchivo.aspx" />

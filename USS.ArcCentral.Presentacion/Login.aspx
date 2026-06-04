@@ -9,7 +9,6 @@
     <link rel="icon" type="image/x-icon" href="img/USS.ico" />
     <title>UNIVERSIDAD SEÑOR DE SIPÁN</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" />
     <link href="CSS/master_intra.css" rel="stylesheet" />
 </head>
         
