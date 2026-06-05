@@ -73,8 +73,7 @@ sobre la base existente:
 
 - **Módulo BiPay** — integración de la pasarela BiPay.
   - Entidades: `ConsultasBiPay`, `ConciliacionBiPay`, `ResumenBiPay`.
-  - Vistas: `jsSis_FrmConciliacionBiPay.js`, `jsSis_FrmMonitoreoBipay.js`,
-    `jsSis_FrmResumenBipay.js`.
+  - Scripts: `ConciliacionBIPAY.js`, `MonitoreoBIPAY.js`, `ResumenBIPAY.js`.
 
 ### Cambios transversales
 
@@ -108,8 +107,7 @@ Aplicación en **3 capas** sobre ASP.NET WebForms + WCF (servicios `.svc`):
                           v
 +----------------------------------------------------------+
 |  USS.ArcCentral.DataAccess                               |
-|  - clsSistema, clsGenerico, clsLogin,                    |
-|    clsMails, clsConected                                 |
+|  - clsSistema (SPs por banco), clsLogin (auth + persona) |
 |  - SQL Server (BD ASBANC / BDSipan)                      |
 |  - Procedimientos almacenados por banco                  |
 +----------------------------------------------------------+
@@ -145,11 +143,8 @@ monitoreo_pagos_uss/
 │
 ├── USS.FactElectronica.DataAccess/     # Capa de datos
 │   ├── App.config                      # *** IGNORADO: contiene credenciales
-│   ├── clsConected.cs
 │   ├── clsSistema.cs                   # Stored procs por banco
-│   ├── clsGenerico.cs
-│   ├── clsLogin.cs
-│   ├── clsMails.cs
+│   ├── clsLogin.cs                     # Auth (sp_User_Validate) + imagen persona
 │   └── Properties/Settings.settings    # *** IGNORADO: connection string
 │
 ├── USS.FactElectronica.BusinessLogic/  # Capa de negocio
@@ -172,11 +167,16 @@ monitoreo_pagos_uss/
 └── USS.ArcCentral.Presentacion/        # Capa de presentación / web
     ├── Login.aspx
     ├── Default.aspx
-    ├── Forms/
-    │   ├── MasterArchivo.aspx
-    │   ├── srvGeneral.svc
-    │   └── srvPersona.svc
-    ├── Scripts/Forms/                  # JS por módulo / banco
+    ├── Pages/
+    │   └── MasterArchivo.aspx          # Página principal (post-login)
+    ├── Services/
+    │   ├── srvGeneral.svc              # WCF AJAX: datos de bancos
+    │   └── srvPersona.svc             # WCF AJAX: imagen de usuario
+    ├── Scripts/                        # JS por módulo / banco
+    │   ├── getImageUser.js
+    │   ├── Monitoreo<Banco>.js
+    │   ├── Conciliacion<Banco>.js
+    │   └── Resumen<Banco>.js
     ├── CSS/
     ├── img/
     ├── Web.config

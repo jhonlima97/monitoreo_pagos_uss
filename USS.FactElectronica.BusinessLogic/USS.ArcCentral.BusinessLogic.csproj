@@ -60,7 +60,6 @@
     <Compile Include="Entidades\BCP\ConsultasBCP.cs" />
     <Compile Include="Entidades\BIPAY\ConsultasBIPAY.cs" />
     <Compile Include="Entidades\KASNET\ConsultasGKN.cs" />
-    <Compile Include="Entidades\IdentityUser.cs" />
     <Compile Include="Entidades\BCP\ConciliacionBCP.cs" />
     <Compile Include="Entidades\PerImagen.cs" />
     <Compile Include="Entidades\BBVA\ResumenBBVA.cs" />

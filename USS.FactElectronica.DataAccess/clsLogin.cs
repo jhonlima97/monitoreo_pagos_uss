@@ -4,7 +4,7 @@ using System.Data.SqlClient;
 
 namespace USS.ArcCentral.DataAccess
 {
-    public class clsLogin : clsDataAccess, IDisposable
+    public class clsLogin : clsDataAccess
     {
         public clsLogin(bool bOnlyConnect = false, bool bTrans = false)
             : base(Properties.Settings.Default.BDSIPANConnectionString, bOnlyConnect, bTrans)
@@ -23,33 +23,14 @@ namespace USS.ArcCentral.DataAccess
             }
         }
 
-        #region "Idisponsable"
-        // Para detectar llamadas redundantes
-        private bool disposedValue = false;
-
-        // IDisposable
-        protected virtual void Dispose(bool disposing)
+        public Object Get_PerImagen(String pcPerCodigo,
+                                    TypeData TypeData = TypeData.gTypeDataReader)
         {
-            if (!this.disposedValue)
+            using (SqlCommand cmd = new SqlCommand("dbo.usp_Administ_Get_PerImagen_Persona"))
             {
-                if (disposing)
-                {
-                    // TODO: Liberar recursos administrados cuando se llamen explícitamente
-                }
-
+                cmd.Parameters.Add("@pcPerCodigo", System.Data.SqlDbType.Char).Value = pcPerCodigo;
+                return this.Get_objData_With_Connexion(cmd, System.Data.CommandType.StoredProcedure, TypeData, Cn, Trans);
             }
-            this.disposedValue = true;
         }
-
-        #region " IDisposable Support "
-        // Visual Basic agregó este código para implementar correctamente el modelo descartable.
-        public void Dispose()
-        {
-            // No cambie este código. Coloque el código de limpieza en Dispose (ByVal que se dispone como Boolean).
-            Dispose(true);
-            GC.SuppressFinalize(this);
-        }
-        #endregion
-        #endregion
     }
 }

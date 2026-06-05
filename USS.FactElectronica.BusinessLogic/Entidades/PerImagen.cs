@@ -20,7 +20,7 @@ namespace USS.ArcCentral.BusinessLogic.Entidades
         public IList<Object> Get_PerImagen(String pcPerCodigo,
                                            TypeData TypeData = TypeData.gTypeDataReader)
         {
-            using (clsGenerico objInsVirt = new clsGenerico(true, false))
+            using (clsLogin objInsVirt = new clsLogin(true, false))
             {
                 SqlDataReader dr = (SqlDataReader)objInsVirt.Get_PerImagen(pcPerCodigo);
                 IList<Object> lDoc;

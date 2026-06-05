@@ -52,7 +52,7 @@
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.13.0.2-beta2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\packages\Newtonsoft.Json.13.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Runtime.Serialization" />
@@ -78,9 +78,22 @@
     <Content Include="CSS\master.css" />
     <Content Include="CSS\master_intra.css" />
     <Content Include="Default.aspx" />
-    <Content Include="Forms\MasterArchivo.aspx" />
-    <Content Include="Forms\srvGeneral.svc" />
-    <Content Include="Forms\srvPersona.svc" />
+    <Content Include="Pages\MasterArchivo.aspx" />
+    <Content Include="Scripts\ConciliacionBBVA.js" />
+    <Content Include="Scripts\ConciliacionBCP.js" />
+    <Content Include="Scripts\ConciliacionBIPAY.js" />
+    <Content Include="Scripts\ConciliacionGKN.js" />
+    <Content Include="Scripts\MonitoreoBBVA.js" />
+    <Content Include="Scripts\MonitoreoBCP.js" />
+    <Content Include="Scripts\MonitoreoBIPAY.js" />
+    <Content Include="Scripts\MonitoreoGKN.js" />
+    <Content Include="Scripts\ResumenBBVA.js" />
+    <Content Include="Scripts\ResumenBCP.js" />
+    <Content Include="Scripts\ResumenBIPAY.js" />
+    <Content Include="Scripts\ResumenGKN.js" />
+    <Content Include="Scripts\ResumenOnline.js" />
+    <Content Include="Services\srvGeneral.svc" />
+    <Content Include="Services\srvPersona.svc" />
     <Content Include="img\check1.png" />
     <Content Include="img\logo.png" />
     <Content Include="img\pre3.gif" />
@@ -88,21 +101,7 @@
     <Content Include="img\spacer.gif" />
     <Content Include="img\USS.ico" />
     <Content Include="Login.aspx" />
-    <Content Include="Scripts\Forms\FrmConciliacionBIPAY.js" />
-    <Content Include="Scripts\Forms\FrmConciliacionBCP.js" />
-    <Content Include="Scripts\Forms\FrmConciliacionGKN.js" />
-    <Content Include="Scripts\Forms\FrmMonitoreoBCP.js" />
-    <Content Include="Scripts\Forms\FrmMonitoreoBIPAY.js" />
-    <Content Include="Scripts\Forms\FrmMonitoreoGKN.js" />
-    <Content Include="Scripts\Forms\FrmResumenBBVA.js" />
-    <Content Include="Scripts\Forms\FrmResumenBCP.js" />
-    <Content Include="Scripts\Forms\FrmResumenBIPAY.js" />
-    <Content Include="Scripts\Forms\FrmResumenGKN.js" />
-    <Content Include="Scripts\Forms\FrmResumenOnline.js" />
-    <Content Include="Scripts\Forms\FrmMonitoreoBBVA.js" />
-    <Content Include="Scripts\Forms\FrmConciliacionBBVA.js" />
-    <None Include="packages.config" />
-    <Content Include="Scripts\jsImage.js" />
+    <Content Include="Scripts\getImageUser.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -115,17 +114,17 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Forms\MasterArchivo.aspx.cs">
+    <Compile Include="Pages\MasterArchivo.aspx.cs">
       <DependentUpon>MasterArchivo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Forms\MasterArchivo.aspx.designer.cs">
+    <Compile Include="Pages\MasterArchivo.aspx.designer.cs">
       <DependentUpon>MasterArchivo.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Forms\srvGeneral.svc.cs">
+    <Compile Include="Services\srvGeneral.svc.cs">
       <DependentUpon>srvGeneral.svc</DependentUpon>
     </Compile>
-    <Compile Include="Forms\srvPersona.svc.cs">
+    <Compile Include="Services\srvPersona.svc.cs">
       <DependentUpon>srvPersona.svc</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
@@ -138,6 +137,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

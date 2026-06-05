@@ -11,7 +11,7 @@ namespace USS.ArcCentral.Presentacion
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Response.Redirect("Forms/MasterArchivo.aspx");
+            Response.Redirect("Pages/MasterArchivo.aspx");
         }
     }
 }

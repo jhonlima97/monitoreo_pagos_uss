@@ -47,8 +47,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="clsConected.cs" />
-    <Compile Include="clsGenerico.cs" />
     <Compile Include="clsLogin.cs" />
     <Compile Include="clsSistema.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

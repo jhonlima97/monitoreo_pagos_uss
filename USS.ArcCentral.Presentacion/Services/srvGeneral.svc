@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="USS.ArcCentral.Presentacion.Services.srvGeneral" CodeBehind="srvGeneral.svc.cs" %>
